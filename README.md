@@ -226,27 +226,6 @@ docker exec bigdata-master bash -c "hdfs dfsadmin -report"
 docker exec bigdata-master bash -c "hdfs fsck /grupo01/dataset_1GB/dataset_grupo01_1GB -files -blocks -locations"
 docker exec bigdata-master bash -c "hdfs fsck /grupo01/dataset_10GB/dataset_grupo01_10GB -files -blocks -locations"
 ```
-
-## Estructura sugerida del repositorio
-
-```text
-bigdata-grupo01/
-├── README.md
-├── docker-compose.yml
-├── Dockerfile                 # si el proyecto utiliza uno
-├── scripts/                   # scripts de automatización, si corresponde
-└── evidencias/
-    ├── 01-directorios.png
-    ├── 02-dataset-1GB.png
-    ├── 03-dataset-10GB.png
-    ├── 04-estado-inicial.png
-    ├── 05-falla-worker2.png
-    ├── 06-lectura-durante-falla.png
-    └── 07-recuperacion-hdfs.png  # pendiente de completar
-```
-
-La estructura es una propuesta para organizar la entrega. Mantener `docker-compose.yml`, Dockerfiles y scripts reales del proyecto; no agregar archivos vacíos ni evidencias que todavía no se hayan generado.
-
 ## Conclusiones
 
 La prueba demuestra que HDFS puede mantener disponible un archivo ante la caída de un DataNode cuando existen réplicas en otros nodos. En el dataset de 1 GiB, el cliente descartó el nodo que no respondía y completó la lectura desde otra réplica. Sin embargo, la restauración del factor de replicación debe verificarse después de que el NameNode detecte formalmente la falla. La medición de los bloques subreplicados, las nuevas réplicas y el tiempo de recuperación de ambos datasets queda pendiente para cerrar esa parte del experimento.
