@@ -1,4 +1,4 @@
-# Scripts de la práctica Hadoop HDFS — Grupo 01
+qqqqqqqqqqqqqqqqq# Scripts de la práctica Hadoop HDFS — Grupo 01
 
 Este documento reúne en un solo archivo Markdown los seis scripts Bash utilizados en la práctica. Cada bloque corresponde a un archivo `.sh` independiente: copia su contenido en la ruta indicada dentro de la carpeta `scripts/` del proyecto.
 
